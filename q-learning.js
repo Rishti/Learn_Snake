@@ -1,10 +1,5 @@
 var QLearning = (function () {
-  // s(playerPose + fruitPose + size + trail) = state of the current position
-  // act(s) = best action so far
-  // rew = instant reward of taking this step
-  // s'(s, act) = new state
 
-  // Q(s, act) += LR * (rew + DF*max(Q(s',*)) - Q(s,act))
   
   var qTable = {};
   var learningRate = 0.85; // Learning Rate
@@ -37,7 +32,6 @@ var QLearning = (function () {
     while(fruitRelativePose.y > tileCount) fruitRelativePose.y -= tileCount;
 
     var stateName = fruitRelativePose.x + ',' + fruitRelativePose.y;
-      // + ',' + trail.length;
     
     for(let index = 0; index < 1; index++) {
       
